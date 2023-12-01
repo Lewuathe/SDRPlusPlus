@@ -16,8 +16,10 @@ else (MSVC)
 
     # Include it because for some reason pkgconfig doesn't look here?
     if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-        target_include_directories(sdrplay_source PRIVATE "/usr/local/include")
-        target_link_directories(sdrplay_source PRIVATE "/usr/local/lib/")
+        # target_include_directories(sdrplay_source PRIVATE "/usr/local/include")
+        # target_link_directories(sdrplay_source PRIVATE "/usr/local/lib/")
+        target_include_directories(sdrplay_source PRIVATE "/opt/homebrew/include")
+        target_link_directories(sdrplay_source PRIVATE "/opt/homebrew/lib/")        
     endif()
 
     target_link_libraries(sdrplay_source PRIVATE sdrplay_api)

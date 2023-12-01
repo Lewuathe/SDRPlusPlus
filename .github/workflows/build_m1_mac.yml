@@ -41,7 +41,7 @@ jobs:
           run: git clone https://github.com/myriadrf/LimeSuite && cd LimeSuite && mkdir builddir && cd builddir && cmake -DCMAKE_BUILD_TYPE=Release .. && make -j3 && sudo make install && cd ../../
 
         - name: Install libperseus
-          run: git clone https://github.com/Microtelecom/libperseus-sdr && cd libperseus-sdr && autoreconf -i && LDFLAGS="$LDFLAGS -L/opt/homebrew/lib" CFLAGS="$CFLAGS -I/opt/homebrew/include" ./configure --prefix=/usr/local && make && make install && cd ..
+          run: git clone https://github.com/Microtelecom/libperseus-sdr && cd libperseus-sdr && autoreconf -i && LDFLAGS="$LDFLAGS -L/opt/homebrew/lib" CFLAGS="$CFLAGS -I/opt/homebrew/include" ./configure --prefix=/usr/local && make && sudo make install && cd ..
 
         - name: Install more recent librtlsdr
           run: git clone https://github.com/osmocom/rtl-sdr && cd rtl-sdr && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release .. && make -j3 LIBRARY_PATH=$(pkg-config --libs-only-L libusb-1.0 | sed 's/\-L//') && sudo make install && cd ../../

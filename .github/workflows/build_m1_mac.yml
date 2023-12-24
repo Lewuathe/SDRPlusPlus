@@ -35,6 +35,7 @@ jobs:
 
         - name: Install SDRplay API
           run: |
+            wget https://www.sdrplay.com/software/SDRplayAPI-macos-installer-universal-3.12.1.pkg
             sudo installer -pkg SDRplayAPI-macos-installer-universal-3.12.1.pkg -target /
 
         - name: Install libiio

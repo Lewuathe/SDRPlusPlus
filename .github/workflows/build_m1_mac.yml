@@ -81,7 +81,7 @@ jobs:
         - name: Create Archive
           run: >
             mkdir sdrpp_all && 
-            mv sdrpp_macos_m1/sdrpp_macos_m1.zip sdrpp_all/ && 
+            mv sdrpp_macos_m1/sdrpp_macos_m1.zip sdrpp_all/
 
         - uses: actions/upload-artifact@v3
           with:
